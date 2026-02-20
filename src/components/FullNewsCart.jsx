@@ -3,7 +3,7 @@ import { ThumbsUp, ThumbsDown, Eye, Tag } from "lucide-react";
 
 const FullNewsCart = ({ item }) => {
   return (
-    <div className="card bg-base-100 shadow-lg border border-gray-200 hover:shadow-2xl hover:border-primary transition duration-300 min-h-[300px] flex flex-col">
+    <div className="card bg-base-100 shadow-lg  hover:shadow-2xl  transition duration-300 min-h-[300px] flex flex-col">
       <div className="card-body flex flex-col justify-between">
         
         <h2 className="card-title text-primary text-xl md:text-2xl font-bold">
@@ -11,7 +11,7 @@ const FullNewsCart = ({ item }) => {
         </h2>
 
         
-        <p className="text-gray-700 mt-2 text-sm md:text-base line-clamp-5">
+        <p className="text-gray-400 mt-2 text-sm md:text-base line-clamp-5">
           {item.body}
         </p>
 

@@ -37,8 +37,8 @@ const FullNewsPage = () => {
           </div>
         </div>
       )}
-      <section className="max-w-6xl mx-auto h-screen flex items-center">
-        <Link to="/news" className="fixed top-20 right-20 hover:text-primary hover:underline flex items-center gap-1"><ArrowLeft size={16} /> Back to news</Link>
+        <Link to="/news" className="fixed top-20 right-10 hover:text-primary hover:underline flex items-center gap-1"><ArrowLeft size={16} /> Back to news</Link>
+      <section className="max-w-6xl mx-auto h-screen flex items-center px-10">
         {news.map((post) => {
           return (
             <div key={post.id}>
