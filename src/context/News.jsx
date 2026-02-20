@@ -8,7 +8,7 @@ const News = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [skip, setSkip] = useState(0);
   const [totalPost, setTotalPost] = useState(0);
-
+  const [allPost, setAllPost] = useState([]);
   const limit = 6;
 
   // Total pages
@@ -47,9 +47,33 @@ const News = ({ children }) => {
     fetchData();
   }, [skip]);
 
+  const fetchDataAll = async () => {
+    setIsLoading(true);
+    let tempAllPost = [];
+    let skip = 0;
+    const limit = 100;
+    try {
+      while (true) {
+        const res = await fetch(
+          `https://dummyjson.com/posts?limit=${limit}&skip=${skip}`,
+        );
+        const data = await res.json();
+        tempAllPost = [...tempAllPost, ...data.posts];
+        skip += data.posts.length;
+        if (skip >= data.total) break;
+      }
+      setAllPost(tempAllPost);
+      
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const value = {
     posts,
+    allPost,
     isLoading,
     currentPage,
     totalPages,
@@ -57,7 +81,7 @@ const News = ({ children }) => {
     isNextDisable,
     handleIncreaseSkip,
     handleDecreaseSkip,
-    
+    fetchDataAll,
   };
 
   return <NewsContext.Provider value={value}>{children}</NewsContext.Provider>;
