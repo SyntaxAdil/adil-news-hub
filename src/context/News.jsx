@@ -48,7 +48,7 @@ const News = ({ children }) => {
   }, [skip]);
 
   const fetchDataAll = async () => {
-    setIsLoading(true);
+    
     let tempAllPost = [];
     let skip = 0;
     const limit = 100;
@@ -66,8 +66,6 @@ const News = ({ children }) => {
       
     } catch (error) {
       console.log(error);
-    } finally {
-      setIsLoading(false);
     }
   };
 

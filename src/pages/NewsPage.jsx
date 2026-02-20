@@ -39,7 +39,7 @@ const NewsPage = () => {
 
   return (
     <>
-      {/* {isLoading && (
+      {isLoading && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50">
           <div className="bg-white p-10 rounded-3xl shadow-2xl flex flex-col items-center gap-5">
             <span className="loading loading-spinner loading-lg text-primary"></span>
@@ -48,7 +48,7 @@ const NewsPage = () => {
             </h2>
           </div>
         </div>
-      )} */}
+      )}
 
       <section className="max-w-6xl mx-auto py-10 px-4">
         <Link
@@ -63,7 +63,7 @@ const NewsPage = () => {
         </h1>
 
         <div className="flex items-center justify-center">
-          <label className="input outline-0 w-1/2 mt-10">
+          <label className="input outline-0 w-full md:w-1/2 mt-10">
             <svg
               className="h-[1em] opacity-50"
               xmlns="http://www.w3.org/2000/svg"
@@ -102,7 +102,7 @@ const NewsPage = () => {
         </div>
       </section>
 
-      {/* 📄 Pagination (hide while searching) */}
+      
       {!searchInput && (
         <div className="join flex justify-center mt-10 mb-16">
           <button
